@@ -8,7 +8,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#">La Previa</a>
+	      <a class="navbar-brand" href="{{url('')}}">La Previa</a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -28,7 +28,7 @@
 			          <ul class="dropdown-menu">
 			            <li><a href="{{action('UsuariosController@index') }}">Usuarios</a></li>
 			            <li role="separator" class="divider"></li>
-			            <li><a href="{{ action('UsuariosController@perfil', [$usuario->id]) }}"><span class="glyphicon glyphicon-user"></span> Mi perfil</a></li>
+			            <li><a href="{{ action('UsuariosController@perfil', [\Auth::user()->id]) }}"><span class="glyphicon glyphicon-user"></span> Mi perfil</a></li>
 			            <li><a href="{{url('auth/logout')}}"><span class="glyphicon glyphicon-off"></span> Cerrar Sesión</a></li>
 			          </ul>
 			        </li>

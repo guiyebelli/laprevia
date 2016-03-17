@@ -1,5 +1,6 @@
 <!-- E S T I L O S -->
 <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel='stylesheet' type='text/css'>
+<link href="{{ asset('css/jquery-confirm.css') }}" rel='stylesheet' type='text/css'>
 <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
 
 <!-- JQUERY -->

@@ -1,10 +1,12 @@
-<footer>
+<footer class="footer">
 	<div class="container">
-		<div class="row">
-			<div class="text-center">
-				<p><span clas="glyphicon glyphicon-ice-lolly-tasted blanco"></span>La Previa Delivery - <span clas="glyphicon glyphicon-ice-lolly-tasted blanco"></span> @lapreviadelivery - <span clas="glyphicon glyphicon-ice-lolly-tasted blanco"></span> @lapreviacdia</p>
-				<p>Concordia - Entre Ríos</p>
-			</div>
-		</div>
+		<p class="text-center">
+			<img src="{{url('images/pagina/facebook.png')}}">
+			<img src="{{url('images/pagina/instagram.png')}}">
+			<img src="{{url('images/pagina/twitter.png')}}">
+		</p>
+		<p class="text-center">
+			Concordia - Entre Ríos
+		</p>
 	</div>
 </footer>
