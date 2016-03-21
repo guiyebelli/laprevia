@@ -13,8 +13,7 @@ class CreateProductosTable extends Migration
             $table->string('precio');
             $table->string('nombre');
             $table->string('descripcion');
-            $table->integer('imagen_id')->unsigned();
-            $table->foreign('imagen_id')->references('id')->on('imagenes');
+            $table->string('imagen');
             
             $table->timestamps();
         });

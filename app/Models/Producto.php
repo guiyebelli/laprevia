@@ -2,23 +2,32 @@
 
 namespace App\Models;
 
-use App\Models\Imagen;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Producto extends Model
 {
     protected $table = 'productos';
 
-    protected $fillable = ['nombre', 'precio', 'descripcion', 'imagen_id'];
+    protected $fillable = ['nombre', 'precio', 'descripcion', 'imagen'];
 
     public function __toString()
     {
         return sprintf("%s", $this->nombre);
     }
 
-    public function imagen()
-	{
-		return $this->belongsTo('App\Models\Imagen');
-	}
+    public function delete()
+    {
+        \File::delete($this->get_path_imagen());
+        parent::delete();
+    }
+
+    public function get_path_imagen()
+    {
+        return path_productos().$this->imagen;
+    }
+
+    public function get_imagen()
+    {
+        return url_productos().$this->imagen;
+    }
 }

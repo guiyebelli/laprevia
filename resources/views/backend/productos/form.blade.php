@@ -20,10 +20,17 @@
 
 
 	@if ($producto->imagen)
-		<div>
-			<img src="">
+		<div class="form-group">
+			{!! Form::label('Imagen actual', 'Imagen actual', array('class' => 'control-label')) !!}
+			<img src="{{$producto->get_imagen()}}" class="img-thumbnail" alt="Imagen producto">
 		</div>
 	@endif
+
+	<div class="form-group @if ($errors->first('imagen')){!! 'has-error' !!}@endif">
+		{!! Form::label('imagen', 'Imagen', array('class' => 'control-label')) !!}
+		{!! Form::file('imagen', null, array('class' => 'form-control')) !!}
+		@if ($errors->first('imagen'))<span class="help-block">{{$errors->first('imagen')}}</span>@endif
+	</div>
 
 	{!! Form::submit($boton, array('class' => 'btn btn-primary col-md-12')) !!}
 	@if(isset($cancelar))
