@@ -27,6 +27,8 @@
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{\Auth::user()}} <span class="caret"></span></a>
 			          <ul class="dropdown-menu">
 			            <li><a href="{{action('UsuariosController@index') }}">Usuarios</a></li>
+			            <li><a href="{{action('ProductosController@index') }}">Productos</a></li>
+			            <li><a href="{{action('PromocionesController@index') }}">Promociones</a></li>
 			            <li role="separator" class="divider"></li>
 			            <li><a href="{{ action('UsuariosController@perfil', [\Auth::user()->id]) }}"><span class="glyphicon glyphicon-user"></span> Mi perfil</a></li>
 			            <li><a href="{{url('auth/logout')}}"><span class="glyphicon glyphicon-off"></span> Cerrar Sesión</a></li>
