@@ -13,15 +13,16 @@
 		</div>
 
 
-		<div class="banda_gris scroller" data-banda="altura_usuarios">
+		<div class="row">
 			<table class="table table-striped">
 				<thead>
 					<tr>
+						<th></th>
 						<th>Nombre</th>
 						<th>Precio</th>
 						<th>Descipcion</th>
 						<th>Imagen</th>
-						<th class="text-center">Acciones</th>
+						<th class="text-right">Acciones</th>
 					</tr>
 				</thead>
 
@@ -29,19 +30,29 @@
 				@if(count($productos) > 0)
 					@foreach($productos as $producto)
 						<tr>
+							<td class="text-center">
+								@if($producto->estado == 0)
+									<a href="{{ action('ProductosController@activar', [$producto->id]) }}" data-method="patch" data-title="Activación de producto" data-confirm="¿Esta seguro que desea activar al producto '{{$producto}}'?"><span class="glyphicon glyphicon-remove-circle rojo" data-toggle="tooltip" data-placement="top" data-title="Activar"></span></a>
+								@elseif($producto->estado == 1)
+									<a href="{{ action('ProductosController@desactivar', [$producto->id]) }}" data-method="patch" data-title="Desactivación de producto" data-confirm="¿Esta seguro que desea desactivar al producto '{{$producto}}'?"><span class="glyphicon glyphicon-ok-circle verde" data-toggle="tooltip" data-placement="top" data-title="Desactivar"></span></a>
+								@endif
+								</a>
+							</td>
 							<td>{{$producto->nombre}}</td>
-							<td>{{$producto->precio}}</td>
+							<td>${{$producto->precio}}</td>
 							<td>{{$producto->descripcion}}</td>
-							<td> - </td>
-							<td>
-								<a title="Editar" href="{{ action('ProductosController@edit', [$producto->id]) }}"><span data-toggle="tooltip" data-placement="bottom" class="glyphicon glyphicon-pencil"></span></a>
-								<a href="{{ action('ProductosController@destroy', [$producto->id]) }}"  data-method="delete" data-confirm="¿Estas seguro que desea eliminar al producto '{{$producto}}'?"> <span title="Eliminar" data-toggle="tooltip" data-placement="bottom" class="glyphicon glyphicon-trash"></span></a>
+							<td class="col-xs-1"> 
+								<img src="{{$producto->get_imagen()}}" class="img-thumbnail" alt="Imagen producto">
+							</td>
+							<td class="text-right">
+								<a href="{{ action('ProductosController@edit', [$producto->id]) }}"><span data-toggle="tooltip" data-placement="top" data-title="Editar" class="glyphicon glyphicon-pencil"></span></a>
+								<a href="{{ action('ProductosController@destroy', [$producto->id]) }}"  data-method="delete" data-confirm="¿Estas seguro que desea eliminar al producto '{{$producto}}'?"> <span title="Eliminar" data-toggle="tooltip" data-placement="top" class="glyphicon glyphicon-trash"></span></a>
 							</td>
 						</tr>
 					@endforeach
 				@else
 					<tr class="text-center">
-						<td colspan="5">NO EXISTEN PRODUCTOS EN EL SISTEMA</td>
+						<td colspan="6">NO EXISTEN PRODUCTOS EN EL SISTEMA</td>
 					</tr>
 				@endif
 
@@ -53,3 +64,4 @@
 </div>
 
 @endsection
+

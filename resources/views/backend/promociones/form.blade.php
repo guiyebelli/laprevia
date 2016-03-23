@@ -8,7 +8,7 @@
 			</div>
 
 			<div>
-				{!! Form::model($producto, array('action' => $accion, 'method' => $metodo, 'enctype' => 'multipart/form-data')) !!}
+				{!! Form::model($promocion, array('action' => $accion, 'method' => $metodo, 'enctype' => 'multipart/form-data')) !!}
 
 					<div class="form-group @if ($errors->first('nombre')){!! 'has-error' !!}@endif">
 						{!! Form::label('nombre', 'Nombre', array('class' => 'control-label')) !!}
@@ -22,19 +22,25 @@
 						@if ($errors->first('precio'))<span class="help-block">{{$errors->first('precio')}}</span>@endif
 					</div>
 
+					<div class="form-group @if ($errors->first('precio_original')){!! 'has-error' !!}@endif">
+						{!! Form::label('precio_original', 'Precio Original', array('class' => 'control-label')) !!}
+						{!! Form::text('precio_original', null, array('class' => 'form-control')) !!}
+						@if ($errors->first('precio_original'))<span class="help-block">{{$errors->first('precio_original')}}</span>@endif
+					</div>
+
 					<div class="form-group @if ($errors->first('descripcion')){!! 'has-error' !!}@endif">
-						{!! Form::label('descripcion', 'Descripción', array('class' => 'control-label')) !!}
+						{!! Form::label('descripcion', 'Descripci&oacute;n', array('class' => 'control-label')) !!}
 						{!! Form::text('descripcion', null, array('class' => 'form-control')) !!}
 						@if ($errors->first('descripcion'))<span class="help-block">{{$errors->first('descripcion')}}</span>@endif
 					</div>
 
 
-					@if ($producto->imagen)
+					@if ($promocion->imagen)
 						<div class="form-group">
 							{!! Form::label('Imagen actual', 'Imagen actual', array('class' => 'control-label')) !!}
 							<div class="col-xs-12">
 								<div class="col-xs-3">
-									<img src="{{$producto->get_imagen()}}" class="img-thumbnail" alt="Imagen producto">
+									<img src="{{$promocion->get_imagen()}}" class="img-thumbnail" alt="Imagen promocion">
 								</div>
 							</div>
 						</div>
@@ -59,5 +65,3 @@
 </div>
 
 <div class="clearfix"></div>
-
-

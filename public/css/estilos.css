@@ -9,8 +9,24 @@ body {
   /* The html and body elements cannot have any padding or margin. */
 }
 
+#fondo{
+   background-image: url("../../images/pagina/fondo.png");
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: contain;
+   background-color: #FE5717;
+}
+
+.titular{
+  color: #FE5717;
+  background-color: #000000;
+  opacity: 0.7;
+  height: 100px;
+}
+
 body>.container {
-    padding: 60px 15px 0;
+    padding: 60px 15px 100px 15px;
 }
 
 .footer{
@@ -30,9 +46,24 @@ body>.container {
   padding: 0px !important;
 }
 
+/* FLASH DATA */
+#flash_data{
+  margin-top: 50px;
+}
+
 /* IMAGENES */
 
 
 /* COLORES */
 .blanco{color: #ffffff;}
 .gris{color: #67686B;}
+.verde{color: green;}
+.rojo{color: red;}
+
+
+/* GALERIA DE PRODUCTOS */
+.bloque{
+  background-color: #000000;
+}
+
+

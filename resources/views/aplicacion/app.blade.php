@@ -11,7 +11,7 @@
 	
 </head>
 
-<body>
+<body id="fondo">
 	@include('aplicacion.menu')
 
 	@include('aplicacion.flash')

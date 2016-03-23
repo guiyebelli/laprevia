@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\Producto;
+
 class InicioController extends Controller 
 {
 	public function __construct()
@@ -8,7 +10,8 @@ class InicioController extends Controller
 
 	public function index()
 	{
-		return view('frontend.index');
+		$data['productos'] = Producto::all();
+		return view('frontend.index', $data);
 	}
 	
 }

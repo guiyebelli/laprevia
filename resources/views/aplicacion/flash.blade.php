@@ -1,3 +1,4 @@
+<div id="flash_data">
 @if (Session::has('noticia'))
 	<div class="alert alert-success fade in">
 	    <button class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -22,3 +23,4 @@
 	    <span class="glyphicon glyphicon-ok-sign"></span> {{ session('status') }}
 	</div>
 @endif
+</div>

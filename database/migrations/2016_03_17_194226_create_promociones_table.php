@@ -15,6 +15,7 @@ class CreatePromocionesTable extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->string('imagen');
+            $table->integer('estado');
             
             $table->timestamps();
         });

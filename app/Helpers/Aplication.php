@@ -7,7 +7,7 @@ function path_productos()
 
 function url_productos()
 {
-	return url().'/uploads/productos';
+	return \URL::to('/').'/uploads/productos/';
 }
 
 function path_promociones()
@@ -17,7 +17,7 @@ function path_promociones()
 
 function url_promociones()
 {
-	return url().'/uploads/promociones';
+	return \URL::to('/').'/uploads/promociones/';
 }
 
 function encriptar_contra($contra = null)

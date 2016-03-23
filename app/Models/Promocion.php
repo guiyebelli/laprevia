@@ -8,10 +8,26 @@ class Promocion extends Model
 {
     protected $table = 'promociones';
 
-    protected $fillable = ['nombre', 'precio', 'precio_original', 'descripcion', 'imagen'];
+    protected $fillable = ['nombre', 'precio', 'precio_original', 'descripcion', 'imagen', 'estado'];
 
     public function __toString()
     {
         return sprintf("%s", $this->nombre);
+    }
+
+    public function delete()
+    {
+        \File::delete($this->get_path_imagen());
+        parent::delete();
+    }
+
+    public function get_path_imagen()
+    {
+        return path_promociones().$this->imagen;
+    }
+
+    public function get_imagen()
+    {
+        return url_promociones().$this->imagen;
     }
 }
