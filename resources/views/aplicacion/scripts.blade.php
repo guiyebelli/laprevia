@@ -5,3 +5,5 @@
 <script src="{{ asset('js/tooltip.js') }}"></script>
 <!-- MODAL -->
 <script src="{{ asset('js/modal.js') }}"></script>
+<!-- CAROUSEL -->
+<script src="{{ asset('js/carousel.js') }}"></script>

@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Models\Producto;
+use App\Models\Promocion;
 
 class InicioController extends Controller 
 {
@@ -11,6 +12,7 @@ class InicioController extends Controller
 	public function index()
 	{
 		$data['productos'] = Producto::all();
+		$data['promociones'] = Promocion::all();
 		return view('frontend.index', $data);
 	}
 	
