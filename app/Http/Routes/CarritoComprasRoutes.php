@@ -1,4 +1,5 @@
 <?php
 	// CARRITO DE COMPRAS FRONTEND
-	Route::resource('micarrito','CarritoComprasController');
+	Route::get('micarrito', 'CarritoComprasController@index');
+	Route::post('micarrito/{id_producto}', 'CarritoComprasController@add');
 ?>

@@ -2,6 +2,7 @@
 
 use App\Models\Producto;
 use App\Models\Promocion;
+use Cart;
 
 class CarritoComprasController extends Controller 
 {
@@ -11,7 +12,12 @@ class CarritoComprasController extends Controller
 
 	public function index()
 	{
-		return view('frontend.carritocompras.index', $data);
+		return view('frontend.carritocompras.index');
+	}
+
+	public function add()
+	{
+
 	}
 	
 }
