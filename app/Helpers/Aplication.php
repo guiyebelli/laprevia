@@ -45,16 +45,28 @@ function eliminar_carpeta($carpeta)
 	rmdir($carpeta);
 }
 
+function save_imagen_thumbnail($image, $path)
+{
+	$imagename = time().'.'.$image->getClientOriginalExtension();
+  $destinationPath = $path;
+  $img = \Image::make($image->getRealPath());
+  $img->resize(200, 200, function ($constraint) {
+      $constraint->aspectRatio();
+  })->save($destinationPath.'/'.$imagename);
+
+  return $imagename;
+}
+
 function save_file($uploadedFile, $path)
 {
 	$extension = '.'.$uploadedFile->getClientOriginalExtension();
 	$resto = -1 * strlen($extension);
-    $nombre = quitar_tildes(substr($uploadedFile->getClientOriginalName(), 0, $resto));
+  $nombre = quitar_tildes(substr($uploadedFile->getClientOriginalName(), 0, $resto));
 	$nombre = str_replace(' ', '_', $nombre);
 
 	$file_path = $path.$nombre.$extension;
-    $file_name = quitar_tildes($uploadedFile->getClientOriginalName());
-    $file_name = str_replace(' ', '_', $file_name);
+  $file_name = quitar_tildes($uploadedFile->getClientOriginalName());
+  $file_name = str_replace(' ', '_', $file_name);
 
 	$counter = 1;
 	
@@ -64,7 +76,7 @@ function save_file($uploadedFile, $path)
 		$file_name = $nombre.'_'.$counter.$extension;
 		$counter++;
 	}
-    echo $path.'<br>';
+  echo $path.'<br>';
 	echo $file_name.'<br>';
     
 	$uploadedFile->move($path, $file_name);

@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="container">
-	<div class="row">
+	<div class="row blanco_BG">
 
-		<div class="text-center" >
+		<div class="col-xs-12 text-center" >
 			<h3>
 				<span>PRODUCTOS</span>
 			</h3>
@@ -13,7 +13,7 @@
 		</div>
 
 
-		<div class="row">
+		<div class="col-xs-12">
 			<table class="table table-striped">
 				<thead>
 					<tr>

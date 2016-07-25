@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="col-xs-8 col-xs-offset-2">
+		<div class="col-xs-8 col-xs-offset-2 blanco_BG">
 			<div class="text-center">
 				<h3 class="titulo_banda_gris">
 					<span>{{$titulo}}</span>
@@ -22,11 +22,11 @@
 						@if ($errors->first('precio'))<span class="help-block">{{$errors->first('precio')}}</span>@endif
 					</div>
 
-					<div class="form-group @if ($errors->first('descripcion')){!! 'has-error' !!}@endif">
+<!-- 					<div class="form-group @if ($errors->first('descripcion')){!! 'has-error' !!}@endif">
 						{!! Form::label('descripcion', 'Descripción', array('class' => 'control-label')) !!}
 						{!! Form::text('descripcion', null, array('class' => 'form-control')) !!}
 						@if ($errors->first('descripcion'))<span class="help-block">{{$errors->first('descripcion')}}</span>@endif
-					</div>
+					</div> -->
 
 
 					@if ($producto->imagen)
@@ -55,9 +55,6 @@
 				{!! Form::close() !!}
 			</div>
 		</div>
+		<div class="clearfix"></div>
 	</div>
 </div>
-
-<div class="clearfix"></div>
-
-

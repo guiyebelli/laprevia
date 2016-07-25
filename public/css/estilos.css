@@ -10,31 +10,28 @@ body {
 }
 
 #fondo{
-   /*background-image: url("../../images/pagina/fondo.png");*/
+   background-image: url("../../images/pagina/fondo.jpg");
    background-position: center center;
+   width: 100%;
    background-repeat: no-repeat;
    background-attachment: fixed;
-   background-size: contain;
-   /*background-color: #FE5717;*/
-}
-
-.titular{
-  color: #FE5717;
-  background-color: #000000;
-  opacity: 0.7;
-  height: 100px;
 }
 
 body>.container {
     padding: 60px 15px 100px 15px;
 }
 
+section {
+  margin-bottom: 150px;
+}
+
 .footer{
   font-size: 12px;
   background-color: #000000;
   color: #ffffff;
-  height: 70px;
+  height: 90px;
   padding: 20px;
+  margin-top: 50px;
 
   position: absolute;
   bottom: 0;
@@ -60,10 +57,20 @@ body>.container {
 .verde{color: green;}
 .rojo{color: red;}
 
+.blanco_BG{background-color: #ffffff;}
+.gris_BG{background-color: #67686B;}
+.verde_BG{background-color: green;}
+.rojo_BG{background-color: red;}
 
-/* GALERIA DE PRODUCTOS */
-.bloque{
-  background-color: #000000;
+
+.carousel-control.left{
+  background-image: none
 }
 
+.carousel-control.right{
+  background-image: none
+}
 
+.productos{
+  margin-top: 30px
+}

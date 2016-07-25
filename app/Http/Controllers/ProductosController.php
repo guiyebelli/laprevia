@@ -26,7 +26,8 @@ class ProductosController extends Controller
     public function store(ProductosRequest $request)
     {
         $imagen = \Request::file('imagen');
-        $nombre_imagen = save_file($imagen, path_productos());
+        $nombre_imagen = save_imagen_thumbnail($imagen, path_productos());
+
         $input = $request->all();
         $input['imagen'] = $nombre_imagen;
         $input['estado'] = 1;
@@ -61,7 +62,7 @@ class ProductosController extends Controller
             if ($imagen) 
             {
                 \File::delete($producto->get_path_imagen);
-                $nombre_imagen = save_file($imagen, path_productos());;
+                $nombre_imagen = save_imagen_thumbnail($imagen, path_productos());
                 $input['imagen'] = $nombre_imagen;
             }
             $producto->update($input);
