@@ -5,8 +5,7 @@
 <div class="container">
 	<div class="row">
 
-		
-		<div class="col-md-6 col-md-offset-6 separador_vert">
+		<div class="col-md-6 col-md-offset-6 separador_vert transparente_BG blanco">
 			<div id="login">
 				<div class="bandita_color gris_9"></div>
 				<div class="banda_gris_header">
@@ -16,13 +15,13 @@
 				</div>
 			</div>
 
-			<div class="banda_gris scroller" data-banda="login">
+			<div class="banda_gris">
 				@if (Session::has('authenticate'))
 					<div class="alert alert-danger fade in">
 					    <button class="close" data-dismiss="alert" aria-hidden="true">×</button>
 					    <span class="glyphicon glyphicon-remove-sign"></span> {{ Session::get('authenticate') }}
 					</div>
-				@endif	
+				@endif
 				<h4>Esta sección está destinada a la administración del sitio.</h4>
 
 			{!! Form::open( array( 'action' => 'LoginController@authenticate', 'method' => 'POST' ) ) !!}
@@ -39,7 +38,7 @@
 						@if ($errors->first('password'))<span class="help-block">{{$errors->first('password')}}</span>@endif
 					</div>
 
-					{!! Form::submit('Iniciar sesion', array('class' => 'btn btn-primary btn-block')) !!}
+					{!! Form::submit('Iniciar sesion', array('class' => 'btn btn-block btn-rojo')) !!}
 					<a href="{{url('password/email')}}" class="btn btn-default btn-block">¿Olvidó su contraseña?</a>
 					<br>
 

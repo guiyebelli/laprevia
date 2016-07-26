@@ -26,11 +26,12 @@
 		</div>
 	@endif
 
-	{!! Form::submit($boton, array('class' => 'btn btn-primary col-md-12')) !!}
-	@if(isset($cancelar))
-		<a href="{{ $cancelar }}" class="btn btn-default col-md-12">CANCELAR</a>
-	@endif
-	<div class="clearfix"></div>
+	<div class="separar pull-right">
+		{!! Form::submit($boton, array('class' => 'btn btn-rojo')) !!}
+		@if(isset($cancelar))
+			<a href="{{ $cancelar }}" class="btn btn-default">CANCELAR</a>
+		@endif
+	</div>
 
 {!! Form::close() !!}
 				

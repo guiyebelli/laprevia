@@ -1,10 +1,8 @@
 <div class="container">
 	<div class="row">
-		<div class="col-xs-8 col-xs-offset-2">
+		<div class="col-xs-8 col-xs-offset-2 transparente_BG blanco">
 			<div class="text-center">
-				<h3 class="titulo_banda_gris">
-					<span>{{$titulo}}</span>
-				</h3>
+				<h3><span>{{$titulo}}</span></h3>
 			</div>
 
 			<div>
@@ -52,16 +50,16 @@
 						@if ($errors->first('imagen'))<span class="help-block">{{$errors->first('imagen')}}</span>@endif
 					</div>
 
-					{!! Form::submit($boton, array('class' => 'btn btn-primary col-md-12')) !!}
-					@if(isset($cancelar))
-						<a href="{{ $cancelar }}" class="btn btn-default col-md-12">CANCELAR</a>
-					@endif
-					<div class="clearfix"></div>
+					<div class="separar pull-right">
+						{!! Form::submit($boton, array('class' => 'btn btn-rojo')) !!}
+						@if(isset($cancelar))
+							<a href="{{ $cancelar }}" class="btn btn-default">CANCELAR</a>
+						@endif
+					</div>
 
 				{!! Form::close() !!}
 			</div>
 		</div>
 	</div>
 </div>
-
 <div class="clearfix"></div>

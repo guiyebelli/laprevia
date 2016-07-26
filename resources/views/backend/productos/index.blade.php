@@ -3,13 +3,13 @@
 @section('content')
 
 <div class="container">
-	<div class="row blanco_BG">
+	<div class="row transparente_BG blanco">
 
 		<div class="col-xs-12 text-center" >
 			<h3>
 				<span>PRODUCTOS</span>
 			</h3>
-			<a title="Nuevo usuario" href="{{ action('ProductosController@create') }}" class="btn btn-primary pull-right"> Nuevo</a>
+			<a title="Nuevo usuario" href="{{ action('ProductosController@create') }}" class="btn btn-rojo pull-right"> Nuevo</a>
 		</div>
 
 
@@ -45,8 +45,8 @@
 								<img src="{{$producto->get_imagen()}}" class="img-thumbnail" alt="Imagen producto">
 							</td>
 							<td class="text-right">
-								<a href="{{ action('ProductosController@edit', [$producto->id]) }}"><span data-toggle="tooltip" data-placement="top" data-title="Editar" class="glyphicon glyphicon-pencil"></span></a>
-								<a href="{{ action('ProductosController@destroy', [$producto->id]) }}"  data-method="delete" data-confirm="¿Estas seguro que desea eliminar al producto '{{$producto}}'?"> <span title="Eliminar" data-toggle="tooltip" data-placement="top" class="glyphicon glyphicon-trash"></span></a>
+								<a href="{{ action('ProductosController@edit', [$producto->id]) }}"><span data-toggle="tooltip" data-placement="top" data-title="Editar" class="glyphicon glyphicon-pencil blanco"></span></a>
+								<a href="{{ action('ProductosController@destroy', [$producto->id]) }}"  data-method="delete" data-confirm="¿Estas seguro que desea eliminar al producto '{{$producto}}'?"> <span title="Eliminar" data-toggle="tooltip" data-placement="top" class="glyphicon glyphicon-trash blanco"></span></a>
 							</td>
 						</tr>
 					@endforeach

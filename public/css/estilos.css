@@ -55,14 +55,15 @@ section {
 .blanco{color: #ffffff;}
 .gris{color: #67686B;}
 .verde{color: green;}
-.rojo{color: red;}
+.rojo{color: #EA1D25;}
 
 .blanco_BG{background-color: #ffffff;}
 .gris_BG{background-color: #67686B;}
 .verde_BG{background-color: green;}
-.rojo_BG{background-color: red;}
+.rojo_BG{background-color: #EA1D25;}
+.transparente_BG{background-color: rgba(0, 0, 0, 0.5);}
 
-
+/*CAROUSEL SIN SOBRA*/
 .carousel-control.left{
   background-image: none
 }
@@ -71,6 +72,20 @@ section {
   background-image: none
 }
 
+/*LISTA DE PRODUCTOS FORNT*/
 .productos{
   margin-top: 30px
 }
+
+/*CONTACTO*/
+.fijo {
+  position:fixed !important; 
+  float: left;
+  top: 250px;
+}
+
+/*BOTONES*/
+.separar{margin-bottom: 10px;}
+.btn-rojo {background-color: #EA1D25; color: #ffffff}
+.btn-rojo:hover {background-color: #AC2225; color: #ffffff}
+.btn-rojo:focus {background-color: #AC2225; color: #ffffff }

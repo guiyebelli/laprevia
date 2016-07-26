@@ -13,9 +13,10 @@
 		@if ($errors->first('password_confirmation'))<span class="help-block">{{$errors->first('password_confirmation')}}</span>@endif
 	</div>
 
-	{!! Form::submit('Guardar', array('class' => 'btn btn-primary btn-block')) !!}
-	@if(isset($cancelar))
-		<a href="{{ $cancelar }}" class="btn btn-default btn-block">CANCELAR</a>
-	@endif
-	<br>
+	<div class="separar pull-right">
+		{!! Form::submit('Guardar', array('class' => 'btn btn-rojo btn-block')) !!}
+		@if(isset($cancelar))
+			<a href="{{ $cancelar }}" class="btn btn-default btn-block">CANCELAR</a>
+		@endif
+	</div>
 {!! Form::close() !!}
