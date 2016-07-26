@@ -39,11 +39,12 @@
 						@if ($errors->first('imagen'))<span class="help-block">{{$errors->first('imagen')}}</span>@endif
 					</div>
 
-					{!! Form::submit($boton, array('class' => 'btn btn-rojo col-md-12')) !!}
-					@if(isset($cancelar))
-						<a href="{{ $cancelar }}" class="btn btn-default col-md-12">CANCELAR</a>
-					@endif
-					<div class="clearfix"></div>
+					<div class="separar pull-right">
+						{!! Form::submit($boton, array('class' => 'btn btn-rojo')) !!}
+						@if(isset($cancelar))
+							<a href="{{ $cancelar }}" class="btn btn-default">Cancelar</a>
+						@endif
+					</div>
 
 				{!! Form::close() !!}
 			</div>

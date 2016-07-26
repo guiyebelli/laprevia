@@ -53,7 +53,7 @@
 					<div class="separar pull-right">
 						{!! Form::submit($boton, array('class' => 'btn btn-rojo')) !!}
 						@if(isset($cancelar))
-							<a href="{{ $cancelar }}" class="btn btn-default">CANCELAR</a>
+							<a href="{{ $cancelar }}" class="btn btn-default">Cancelar</a>
 						@endif
 					</div>
 

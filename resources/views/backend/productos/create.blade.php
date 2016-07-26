@@ -4,7 +4,7 @@
 	@include('backend.productos.form',['metodo' => 'POST',
 									  'titulo' => 'Nuevo Producto',
 									  'accion' => ['ProductosController@store'],
-									  'boton' => 'CREAR',
+									  'boton' => 'Crear',
 									  'cancelar' => action('ProductosController@index'),
 	])
 			
