@@ -77,6 +77,12 @@ section {
   margin-top: 30px
 }
 
+.caja_producto
+{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 /*CONTACTO*/
 .fijo {
   position:fixed !important; 
@@ -89,3 +95,7 @@ section {
 .btn-rojo {background-color: #EA1D25; color: #ffffff}
 .btn-rojo:hover {background-color: #AC2225; color: #ffffff}
 .btn-rojo:focus {background-color: #AC2225; color: #ffffff }
+
+.btn-negro {background-color: #000000; color: #ffffff}
+.btn-negro:hover {background-color: #67686B; color: #ffffff}
+.btn-negro:focus {background-color: #67686B; color: #ffffff }

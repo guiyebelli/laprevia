@@ -1,13 +1,22 @@
+<script src="{{ asset('js/lista_productos.js') }}"></script>
+
 <div class="productos">
-	<div class="row placeholders">
+	<div class="row transparente_BG blanco">
 	@foreach($productos as $producto)
-		<div class="col-xs-6 col-sm-3 placeholder blanco">
+		<div class="col-xs-6 col-sm-3 caja_producto text-center">
 			<p><img src="{{$producto->get_imagen()}}" class="img-circle" alt="Imagen producto" width="200" height="200"></p>
 			<p> {{$producto}} </p>
+			<p> <small>{{$producto->descripcion}}</small></p>
 			<h4>${{$producto->precio}}</h4>
 			<div>
 				{!! Form::model($producto, array('action' => ['CarritoComprasController@add', $producto->id], 'method' => 'POST')) !!}
-					{!! Form::submit('Agregar al carrito', array('class' => 'btn btn-primary col-md-12')) !!}
+					
+					<div class="form-group">
+						{{ Form::hidden('cantidad', 1, array('id' => 'cantidad')) }}
+						{{ Form::button('&lt;', array('class'=>'btn btn-negro boton_restar', 'type'=>'button')) }} <span>1</span> {{ Form::button('>', array('class'=>'btn btn-negro boton_sumar', 'type'=>'button')) }}
+					</div>
+
+					{{ Form::button('+<span class="glyphicon glyphicon-shopping-cart"></span>',	array('class'=>'btn btn-rojo','type'=>'submit')) }}
 				{!! Form::close() !!}
 			</div>
 		</div>
