@@ -13,7 +13,8 @@
 								<thead>
 									<tr>
 										<th>Nombre</th>
-										<th>Precio</th>
+										<th class="text-center">Cantidad</th>
+										<th class="text-center">Precio</th>
 										<th class="text-right">Acciones</th>
 									</tr>
 								</thead>
@@ -22,8 +23,9 @@
 									@if(count($carrito) > 0)
 										@foreach($carrito as $producto)
 											<tr>
-												<td>{{$producto->nombre}}</td>
-												<td>${{$producto->precio}}</td>
+												<td>{{$producto->name}}</td>
+												<td class="text-center">{{$producto->qty}}</td>
+												<td class="text-center">${{$producto->price}}</td>
 												<td class="text-right">
 													<!-- <a href="{{ action('ProductosController@destroy', [$producto->id]) }}"  data-method="delete" data-confirm="¿Estas seguro que desea eliminar al producto '{{$producto}}'?"> <span title="Eliminar" data-toggle="tooltip" data-placement="top" class="glyphicon glyphicon-trash blanco"></span></a> -->
 												</td>
@@ -31,7 +33,7 @@
 										@endforeach
 									@else
 										<tr class="text-center">
-											<td colspan="3">A&Uacute;N NO HA AGREGADO PRODUCTOS/PROMOCIONES </td>
+											<td colspan="4">A&Uacute;N NO HA AGREGADO PRODUCTOS/PROMOCIONES </td>
 										</tr>
 									@endif
 								</tbody>

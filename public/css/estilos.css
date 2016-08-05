@@ -72,6 +72,11 @@ section {
   background-image: none
 }
 
+/*LISTA DE CARRITO FORNT*/
+.carrito{
+  margin-top: 30px
+}
+
 /*LISTA DE PRODUCTOS FORNT*/
 .productos{
   margin-top: 30px

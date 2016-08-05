@@ -25,7 +25,7 @@ class CarritoComprasController extends Controller
 		Cart::add(array('id' => $input['producto_id'], 'name' => $producto->nombre, 'qty' => $input['cantidad'], 'price' => $producto->precio));
 
 		\Session::flash('noticia', 'El producto "'.$producto->nombre.'" ha sido agregado con exito al carrio.');
-		return redirect('frontend/micarrito');
+		return redirect('micarrito');
 	}
 	
 }
