@@ -5,9 +5,40 @@
 <section>
 	<div class="container">
 		<div class="row">
-			
-			este es mi carrito de compras
+			<div class="col-xs-10 col-xs-offset-1 bloque">
+				<div class="carrito">
+					<div class="row transparente_BG blanco">
+						<div class="col-xs-12">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Nombre</th>
+										<th>Precio</th>
+										<th class="text-right">Acciones</th>
+									</tr>
+								</thead>
 
+								<tbody>
+									@if(count($carrito) > 0)
+										@foreach($carrito as $producto)
+											<tr>
+												<td>{{$producto->nombre}}</td>
+												<td>${{$producto->precio}}</td>
+												<td class="text-right">
+													<!-- <a href="{{ action('ProductosController@destroy', [$producto->id]) }}"  data-method="delete" data-confirm="¿Estas seguro que desea eliminar al producto '{{$producto}}'?"> <span title="Eliminar" data-toggle="tooltip" data-placement="top" class="glyphicon glyphicon-trash blanco"></span></a> -->
+												</td>
+											</tr>
+										@endforeach
+									@else
+										<tr class="text-center">
+											<td colspan="3">A&Uacute;N NO HA AGREGADO PRODUCTOS/PROMOCIONES </td>
+										</tr>
+									@endif
+								</tbody>
+							</table>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 

@@ -16,7 +16,7 @@
 		    <ul class="nav navbar-nav">
 		        <li class="active"><a href="#">Productos y Precios <span class="sr-only">(current)</span></a></li>
 		        <li><a href="#">Promociones</a></li>
-		        <li><a href="#">Carrito de compras</a></li>
+		        <li><a href="{{action('CarritoComprasController@index') }}">Carrito de compras</a></li>
 		    </ul>
 
 	      	<ul class="nav navbar-nav navbar-right">

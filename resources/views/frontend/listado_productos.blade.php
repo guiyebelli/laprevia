@@ -9,9 +9,10 @@
 			<p> <small>{{$producto->descripcion}}</small></p>
 			<h4>${{$producto->precio}}</h4>
 			<div>
-				{!! Form::model($producto, array('action' => ['CarritoComprasController@add', $producto->id], 'method' => 'POST')) !!}
+				{!! Form::model($producto, array('action' => ['CarritoComprasController@add_producto'], 'method' => 'POST')) !!}
 					
 					<div class="form-group">
+						{{ Form::hidden('producto_id', $producto->id, array('id' => 'producto_id')) }}
 						{{ Form::hidden('cantidad', 1, array('id' => 'cantidad')) }}
 						{{ Form::button('&lt;', array('class'=>'btn btn-negro boton_restar', 'type'=>'button')) }} <span>1</span> {{ Form::button('>', array('class'=>'btn btn-negro boton_sumar', 'type'=>'button')) }}
 					</div>
