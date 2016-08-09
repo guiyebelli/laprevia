@@ -15,7 +15,7 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    <ul class="nav navbar-nav">
 		        <li class="active"><a href="{{url('')}}">Productos y Precios <span class="sr-only">(current)</span></a></li>
-		        <li><a href="#">Promociones</a></li>
+		        <li><a href="{{action('InicioController@promociones')}}">Promociones</a></li>
 		        <li><a href="{{action('CarritoComprasController@index') }}">Carrito de compras</a></li>
 		    </ul>
 

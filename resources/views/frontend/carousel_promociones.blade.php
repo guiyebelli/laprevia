@@ -10,12 +10,12 @@
   	</ol>
 
   	<!-- Wrapper for slides -->
-  	<div class="carousel-inner" role="listbox">
+  <div class="carousel-inner" role="listbox">
   		<?php $count = 0 ?>
 		@foreach($promociones as $promocion)
-		    <div class="item  {{ ($count == 0) ? 'active' : '' }}">
+		    <div class="item {{ ($count == 0) ? 'active' : '' }}">
 		    	<div align="center">
-		      	<img height='300' src="{{$promocion->get_imagen()}}" alt="Imagen promocion">
+		      	<img height='340' src="{{$promocion->get_imagen()}}" alt="Imagen promocion">
 		    	</div>
 		    </div>
 	    	<?php $count++ ?>

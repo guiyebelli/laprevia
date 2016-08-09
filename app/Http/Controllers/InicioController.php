@@ -15,5 +15,12 @@ class InicioController extends Controller
 		$data['promociones'] = Promocion::all();
 		return view('frontend.index', $data);
 	}
+
+	public function promociones()
+	{
+		$data['promociones'] = Promocion::all();
+		return view('frontend.listado_promociones', $data);
+
+	}
 	
 }
