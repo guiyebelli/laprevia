@@ -35,7 +35,7 @@
 
 					@if ($promocion->imagen)
 						<div class="form-group">
-							{!! Form::label('Imagen actual', 'Imagen actual', array('class' => 'control-label')) !!}
+							{!! Form::label('imagen_actual', 'Imagen actual', array('class' => 'control-label')) !!}
 							<div class="col-xs-12">
 								<div class="col-xs-3">
 									<img src="{{$promocion->get_imagen()}}" class="img-thumbnail" alt="Imagen promocion">

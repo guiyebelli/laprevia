@@ -1,4 +1,4 @@
-<div id="carousel-promociones" class="carousel slide col-xs-10 col-xs-offset-1" data-ride="carousel">
+<div id="carousel-promociones" class="carousel slide col-xs-12" data-ride="carousel">
 			  	
   	<!-- Indicators -->
   	<ol class="carousel-indicators">

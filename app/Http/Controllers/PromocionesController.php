@@ -60,7 +60,7 @@ class PromocionesController extends Controller
             $imagen = \Request::file('imagen');
             if ($imagen) 
             {
-                \File::delete($promocion->get_path_imagen);
+                \File::delete($promocion->get_imagen());
                 $nombre_imagen = save_file($imagen, path_promociones());;
                 $input['imagen'] = $nombre_imagen;
             }

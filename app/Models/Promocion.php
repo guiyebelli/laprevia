@@ -15,12 +15,6 @@ class Promocion extends Model
         return sprintf("%s", $this->nombre);
     }
 
-    public function delete()
-    {
-        \File::delete($this->get_path_imagen());
-        parent::delete();
-    }
-
     public function get_path_imagen()
     {
         return path_promociones().$this->imagen;
@@ -29,5 +23,11 @@ class Promocion extends Model
     public function get_imagen()
     {
         return url_promociones().$this->imagen;
+    }
+
+    public function delete()
+    {
+        \File::delete($this->get_path_imagen());
+        parent::delete();
     }
 }
