@@ -20,7 +20,7 @@ class LoginController extends Controller
 	{
 		if ( \Auth::attempt( ['username' => \Request::input('username'), 'password' => \Request::input('password'), 'estado' => true] ) )
 		{
-			return redirect('administracion/usuarios');
+			return redirect('administracion/productos');
 		}
 		else
 		{

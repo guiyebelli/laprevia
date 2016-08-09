@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="{{url('images/pagina/favico.png')}}"/>
 	
-	<title>LA PREVIA DELIVERY</title>
+	<title>La Previa Delivery</title>
 
 	@include('aplicacion.fronts')
 	

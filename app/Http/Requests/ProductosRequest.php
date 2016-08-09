@@ -14,6 +14,7 @@ class ProductosRequest extends Request
 		$rules = array(
 			'nombre' => 'required',
 			'precio' => 'required',
+			'descripcion' => 'required',
 		);
 
 		if ( $this->method() == 'POST') 

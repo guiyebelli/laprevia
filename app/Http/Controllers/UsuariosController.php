@@ -104,8 +104,8 @@ class UsuariosController extends Controller
 
 		\Mail::send('emails.activacion', ['password' => $contra, 'username' => $usuario->username], function($message) use($usuario)
 			{
-				$message->from('pdd@mail.ec.gba.gov.ar', 'PDD');
-		    	$message->to($usuario->email, $usuario)->subject('Activación');
+				$message->from('no-reply@gmail.com', 'La Previa Delivery');
+		    $message->to($usuario->email, $usuario)->subject('Activación');
 			}
 		);
 
@@ -155,8 +155,8 @@ class UsuariosController extends Controller
 
 		\Mail::send('emails.restablecer_contra', ['password' => $contra, 'username' => $usuario->username], function($message) use($usuario)
 			{
-				$message->from('pdd@mail.ec.gba.gov.ar', 'PDD');
-		    	$message->to($usuario->email, $usuario)->subject('Restablecimiento de contraseña.');
+				$message->from('no-reply@gmail.com', 'La Previa Delivery');
+		    $message->to($usuario->email, $usuario)->subject('Restablecimiento de contraseña.');
 			}
 		);
 

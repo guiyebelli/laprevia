@@ -22,6 +22,12 @@
 						@if ($errors->first('precio'))<span class="help-block">{{$errors->first('precio')}}</span>@endif
 					</div>
 
+					<div class="form-group @if ($errors->first('descripcion')){!! 'has-error' !!}@endif">
+						{!! Form::label('descripcion', 'Descripci&oacute;n', array('class' => 'control-label')) !!}
+						{!! Form::text('descripcion', null, array('class' => 'form-control')) !!}
+						@if ($errors->first('descripcion'))<span class="help-block">{{$errors->first('descripcion')}}</span>@endif
+					</div>
+
 					@if ($producto->imagen)
 						<div class="form-group">
 							{!! Form::label('Imagen actual', 'Imagen actual', array('class' => 'control-label')) !!}

@@ -17,9 +17,6 @@
 		    	<div align="center">
 		      	<img height='300' src="{{$promocion->get_imagen()}}" alt="Imagen promocion">
 		    	</div>
-		      <div class="carousel-caption">
-		        {{$promocion}}
-		      </div>
 		    </div>
 	    	<?php $count++ ?>
 	    @endforeach

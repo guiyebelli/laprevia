@@ -17,6 +17,7 @@
 						<th></th>
 						<th>Nombre</th>
 						<th>Precio</th>
+						<th>Descripcion</th>
 						<th>Imagen</th>
 						<th class="text-right">Acciones</th>
 					</tr>
@@ -36,6 +37,7 @@
 								</td>
 								<td>{{$producto->nombre}}</td>
 								<td>${{$producto->precio}}</td>
+								<td>${{$producto->descripcion}}</td>
 								<td class="col-xs-1"> 
 									<img src="{{$producto->get_imagen()}}" class="img-thumbnail" alt="Imagen producto">
 								</td>
