@@ -15,6 +15,7 @@ class ProductosRequest extends Request
 			'nombre' => 'required',
 			'precio' => 'required',
 			'descripcion' => 'required',
+			'tipo' => 'required',
 		);
 
 		if ( $this->method() == 'POST') 

@@ -16,6 +16,7 @@
 					<tr>
 						<th></th>
 						<th>Nombre</th>
+						<th>Tipo</th>
 						<th>Precio</th>
 						<th>Descripcion</th>
 						<th>Imagen</th>
@@ -36,6 +37,7 @@
 									</a>
 								</td>
 								<td>{{$producto->nombre}}</td>
+								<td>{{$tipos[$producto->tipo]}}</td>
 								<td>${{$producto->precio}}</td>
 								<td>${{$producto->descripcion}}</td>
 								<td class="col-xs-1"> 
@@ -49,7 +51,7 @@
 						@endforeach
 					@else
 						<tr class="text-center">
-							<td colspan="6">NO EXISTEN PRODUCTOS EN EL SISTEMA</td>
+							<td colspan="7">NO EXISTEN PRODUCTOS EN EL SISTEMA</td>
 						</tr>
 					@endif
 				</tbody>

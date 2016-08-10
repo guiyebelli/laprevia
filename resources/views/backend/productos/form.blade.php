@@ -10,6 +10,12 @@
 			<div>
 				{!! Form::model($producto, array('action' => $accion, 'method' => $metodo, 'enctype' => 'multipart/form-data')) !!}
 
+					<div class="form-group @if ($errors->first('tipo')){!! 'has-error' !!}@endif">
+						{!! Form::label('tipo', 'Tipo', array('class' => 'control-label')) !!}
+						{!! Form::select('tipo', array_tipos_productos(), null, array('class' => 'form-control', 'id' => 'tipo')) !!}
+						@if ($errors->first('tipo'))<span class="help-block">{{$errors->first('tipo')}}</span>@endif
+					</div>
+
 					<div class="form-group @if ($errors->first('nombre')){!! 'has-error' !!}@endif">
 						{!! Form::label('nombre', 'Nombre', array('class' => 'control-label')) !!}
 						{!! Form::text('nombre', null, array('class' => 'form-control')) !!}

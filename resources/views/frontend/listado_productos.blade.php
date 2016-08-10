@@ -1,4 +1,4 @@
-<script src="{{ asset('js/lista_productos.js') }}"></script>
+<script src="{{ asset('js/sumar_carrito.js') }}"></script>
 
 <div class="productos">
 	<div class="row transparente_BG blanco">

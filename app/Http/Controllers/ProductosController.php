@@ -14,6 +14,7 @@ class ProductosController extends Controller
     public function index()
     {
         $data['productos'] = Producto::all();
+        $data['tipos'] = array_tipos_productos();
         return view('backend.productos.index', $data);
     }
 

@@ -20,6 +20,17 @@ function url_promociones()
 	return \URL::to('/').'/uploads/promociones/';
 }
 
+function array_tipos_productos()
+{
+	return array(
+		'0' => 'Sin Alcohol',
+		'1' => 'Aperitivos',
+		'2' => 'Bebidas Blancas',
+		'3' => 'Vinos y Espumantes',
+		'4' => 'Otros'
+	);
+}
+
 function encriptar_contra($contra = null)
 {
     if ($contra == null) 
