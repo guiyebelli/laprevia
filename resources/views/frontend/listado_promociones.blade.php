@@ -21,10 +21,10 @@
 							</strong>
 							<p><small>{{$promocion->descripcion}}</small></p>
 							<div>
-								{!! Form::model($producto, array('action' => ['CarritoComprasController@add_promocion'], 'method' => 'POST')) !!}
+								{!! Form::model($promocion, array('action' => ['CarritoComprasController@add_promocion'], 'method' => 'POST')) !!}
 									
 									<div class="form-group">
-										{{ Form::hidden('promocion_id', $producto->id, array('id' => 'promocion_id')) }}
+										{{ Form::hidden('promocion_id', $promocion->id, array('id' => 'promocion_id')) }}
 										{{ Form::hidden('cantidad', 1, array('id' => 'cantidad')) }}
 										{{ Form::button('&lt;', array('class'=>'btn btn-negro boton_restar', 'type'=>'button')) }} <span>1</span> {{ Form::button('>', array('class'=>'btn btn-negro boton_sumar', 'type'=>'button')) }}
 									</div>

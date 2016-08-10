@@ -15,6 +15,7 @@
 				<thead>
 					<tr>
 						<th></th>
+						<th>Inicio</th>
 						<th>Nombre</th>
 						<th>Precio</th>
 						<th>Precio Original</th>
@@ -36,6 +37,7 @@
 									@endif
 									</a>
 								</td>
+								<td class="text-center">{{($promocion->visible == 0) ? 'Si' : 'No'}}</td>
 								<td>{{$promocion->nombre}}</td>
 								<td>${{$promocion->precio}}</td>
 								<td>${{$promocion->precio_original}}</td>

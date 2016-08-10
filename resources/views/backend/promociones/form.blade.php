@@ -8,6 +8,12 @@
 			<div>
 				{!! Form::model($promocion, array('action' => $accion, 'method' => $metodo, 'enctype' => 'multipart/form-data')) !!}
 
+					<div class="form-group @if ($errors->first('visible')){!! 'has-error' !!}@endif">
+						{!! Form::label('visible', '¿Queres que se vea en el inicio?', array('class' => 'control-label')) !!}
+						{!! Form::select('visible', array('0' => 'Si', '1' => 'No'), null, array('class' => 'form-control', 'id' => 'visible')) !!}
+						@if ($errors->first('visible'))<span class="help-block">{{$errors->first('visible')}}</span>@endif
+					</div>
+
 					<div class="form-group @if ($errors->first('nombre')){!! 'has-error' !!}@endif">
 						{!! Form::label('nombre', 'Nombre', array('class' => 'control-label')) !!}
 						{!! Form::text('nombre', null, array('class' => 'form-control')) !!}

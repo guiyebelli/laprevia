@@ -8,15 +8,15 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="{{url('')}}">La Previa</a>
+	      <a class="navbar-brand" href="{{url('')}}"><img src="{{url('images/pagina/favico.png')}}" class="img-thumbnail imagen_menu"></a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    <ul class="nav navbar-nav">
-		        <li class="active"><a href="{{url('')}}">Productos y Precios <span class="sr-only">(current)</span></a></li>
-		        <li><a href="{{action('InicioController@promociones')}}">Promociones</a></li>
-		        <li><a href="{{action('CarritoComprasController@index') }}">Carrito de compras</a></li>
+		        <li <?= (\Route::current()->geturi() == 'productos') ? 'class="active"' : '' ?>><a href="{{action('InicioController@productos')}}">Productos <span class="sr-only">(current)</span></a></li>
+		        <li <?= (\Route::current()->geturi() == 'promociones') ? 'class="active"' : '' ?>><a href="{{action('InicioController@promociones')}}">Promociones</a></li>
+		        <li <?= (\Route::current()->geturi() == 'micarrito') ? 'class="active"' : '' ?>><a href="{{action('CarritoComprasController@index') }}">Carrito de compras</a></li>
 		    </ul>
 
 	      	<ul class="nav navbar-nav navbar-right">

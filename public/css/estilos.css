@@ -49,7 +49,11 @@ section {
 }
 
 /* IMAGENES */
-
+/*.imagen_menu
+{
+  width: 40px;
+  padding: 0px;
+}*/
 
 /* COLORES */
 .blanco{color: #ffffff;}
