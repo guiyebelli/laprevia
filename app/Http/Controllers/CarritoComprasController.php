@@ -2,6 +2,7 @@
 
 use App\Models\Producto;
 use App\Http\Requests\CarritoProductoRequest;
+use App\Http\Requests\CarritoPromocionRequest;
 use App\Models\Promocion;
 use Cart;
 
@@ -20,12 +21,17 @@ class CarritoComprasController extends Controller
 
 	public function add_producto(CarritoProductoRequest $request)
 	{
+
 		$input = $request->all();
 		$producto = Producto::findOrFail($input['producto_id']);
 		Cart::add(array('id' => $input['producto_id'], 'name' => $producto->nombre, 'qty' => $input['cantidad'], 'price' => $producto->precio));
 
-		\Session::flash('noticia', 'El producto "'.$producto->nombre.'" ha sido agregado con exito al carrio.');
-		return redirect('micarrito');
+		$response = array(
+      'status' => 'success',
+      'msj' => '"'.$producto->nombre.'" agregado al carrito.',
+      'cant_carrito' => count(Cart::content()),
+    );
+		return \Response::json($response);
 	}
 
 	public function add_promocion(CarritoPromocionRequest $request)
@@ -34,8 +40,12 @@ class CarritoComprasController extends Controller
 		$promocion = Promocion::findOrFail($input['promocion_id']);
 		Cart::add(array('id' => $input['promocion_id'], 'name' => $promocion->nombre, 'qty' => $input['cantidad'], 'price' => $promocion->precio));
 
-		\Session::flash('noticia', 'La promocion "'.$promocion->nombre.'" ha sido agregado con exito al carrio.');
-		return redirect('micarrito');
+		$response = array(
+      'status' => 'success',
+      'msj' => '"'.$promocion->nombre.'" agregada al carrito.',
+      'cant_carrito' => count(Cart::content()),
+    );
+		return \Response::json($response);
 	}
 
 	public function actualizar($id)

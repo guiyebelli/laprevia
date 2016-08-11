@@ -21,7 +21,7 @@
 							</strong>
 							<p><small>{{$promocion->descripcion}}</small></p>
 							<div>
-								{!! Form::model($promocion, array('action' => ['CarritoComprasController@add_promocion'], 'method' => 'POST')) !!}
+								{!! Form::model($promocion, array('action' => ['CarritoComprasController@add_promocion'], 'method' => 'POST', 'class' => 'formCarrito')) !!}
 									
 									<div class="form-group">
 										{{ Form::hidden('promocion_id', $promocion->id, array('id' => 'promocion_id')) }}

@@ -103,6 +103,18 @@ section {
   top: 250px;
 }
 
+/* NOTIFICACIONES */
+#notifications {
+    cursor: pointer;
+    position: fixed;
+    right: 0px;
+    z-index: 9999;
+    bottom: 0px;
+    margin-bottom: 22px;
+    margin-right: 15px;
+    max-width: 300px;   
+}
+
 /*BOTONES*/
 .separar{margin-bottom: 10px;}
 .btn-rojo {background-color: #EA1D25; color: #ffffff}

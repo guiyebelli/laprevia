@@ -20,7 +20,7 @@
 		    </ul>
 
 	      	<ul class="nav navbar-nav navbar-right">
-	      		<li><a href="{{ action('CarritoComprasController@index') }}" data-toggle="tooltip" data-placement="bottom" data-title="Mi Carrito"><span class="glyphicon glyphicon-shopping-cart"></span> <span class="badge">{{count(Cart::content())}}</span></a></li>
+	      		<li><a href="{{ action('CarritoComprasController@index') }}" data-toggle="tooltip" data-placement="bottom" data-title="Mi Carrito"><span class="glyphicon glyphicon-shopping-cart"></span> <span class="badge" id="cantidad_carrito">{{count(Cart::content())}}</span></a></li>
 	      		@if (Auth::guest())
 	        		<li><a href="{{url('login')}}" ><span class="glyphicon glyphicon-cog"></span></a></li>
 	        	@else

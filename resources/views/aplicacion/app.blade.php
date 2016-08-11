@@ -23,6 +23,11 @@
 	<div class="fijo">
 		<img src="{{url('images/pagina/pedidos-03.png')}}" style="max-width:150px;">
 	</div>
+
+	
+	<div id="notifications">
+
+	</div>
 	@endif
 
     @yield('content')

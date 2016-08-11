@@ -17,7 +17,7 @@
 							<p> <small>{{$producto->descripcion}}</small></p>
 							<h4>${{$producto->precio}}</h4>
 							<div>
-								{!! Form::model($producto, array('action' => ['CarritoComprasController@add_producto'], 'method' => 'POST')) !!}
+								{!! Form::model($producto, array('action' => ['CarritoComprasController@add_producto'], 'method' => 'POST', 'class' => 'formCarrito')) !!}
 									
 									<div class="form-group">
 										{{ Form::hidden('producto_id', $producto->id, array('id' => 'producto_id')) }}

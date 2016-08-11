@@ -7,3 +7,5 @@
 <script src="{{ asset('js/modal.js') }}"></script>
 <!-- CAROUSEL -->
 <script src="{{ asset('js/carousel.js') }}"></script>
+<!-- bootstrap-notify -->
+<script src="{{ asset('js/Notify.js') }}"></script>
