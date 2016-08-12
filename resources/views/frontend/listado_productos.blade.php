@@ -1,16 +1,16 @@
 @extends('aplicacion/app')
 
 @section('content')
-<script src="{{ asset('js/sumar_carrito.js') }}"></script>
 <section>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-10 col-xs-offset-1 transparente_BG blanco">
+				
 				<div class="page-header">
 				  <h1>Nuestros Productos</h1>
 				</div>
-				<div class="bloque">
 
+				<div class="bloque">
 					<?php $first = true; ?>
 					<ul class="nav nav-pills nav-justified" role="tablist">
 						@foreach($categorias as $categoria)
@@ -35,18 +35,8 @@
 													<p> {{$producto}} </p>
 													<p> <small>{{$producto->descripcion}}</small></p>
 													<h4>${{$producto->precio}}</h4>
-													<div>
-														{!! Form::model($producto, array('action' => ['CarritoComprasController@add_producto'], 'method' => 'POST', 'class' => 'formCarrito')) !!}
-															
-															<div class="form-group">
-																{{ Form::hidden('producto_id', $producto->id, array('id' => 'producto_id')) }}
-																{{ Form::hidden('cantidad', 1, array('id' => 'cantidad')) }}
-																{{ Form::button('&lt;', array('class'=>'btn btn-negro boton_restar', 'type'=>'button')) }} <span>1</span> {{ Form::button('>', array('class'=>'btn btn-negro boton_sumar', 'type'=>'button')) }}
-															</div>
 
-															{{ Form::button('+<span class="glyphicon glyphicon-shopping-cart"></span>',	array('class'=>'btn btn-rojo','type'=>'submit')) }}
-														{!! Form::close() !!}
-													</div>
+													@include('frontend.form_add_carrito', ['objeto' => $producto, 'accion' => 'CarritoComprasController@add_producto'])
 												</div>
 											@endforeach
 										</div>										

@@ -12,7 +12,7 @@ class CarritoProductoRequest extends Request
 	public function rules()
 	{
 		return array(
-			'producto_id' => 'required',
+			'objeto_id' => 'required',
 			'cantidad' => 'required',
 		);
 	}

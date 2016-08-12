@@ -12,7 +12,7 @@ class CarritoPromocionRequest extends Request
 	public function rules()
 	{
 		return array(
-			'promocion_id' => 'required',
+			'objeto_id' => 'required',
 			'cantidad' => 'required',
 		);
 	}

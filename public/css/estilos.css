@@ -138,3 +138,15 @@ section {
   background-color: #EA1D25;
   color: #ffffff;
 }
+
+.recuadro{
+  background-color: #fff;
+  padding: 20px;
+  min-height: 236px
+}
+
+.titulo_promo {margin: 0px}
+
+.linea_der {
+  border-right: 1px solid #eee;
+}

@@ -23,8 +23,8 @@ class CarritoComprasController extends Controller
 	{
 
 		$input = $request->all();
-		$producto = Producto::findOrFail($input['producto_id']);
-		Cart::add(array('id' => $input['producto_id'], 'name' => $producto->nombre, 'qty' => $input['cantidad'], 'price' => $producto->precio));
+		$producto = Producto::findOrFail($input['objeto_id']);
+		Cart::add(array('id' => $input['objeto_id'], 'name' => $producto->nombre, 'qty' => $input['cantidad'], 'price' => $producto->precio));
 
 		$response = array(
       'status' => 'success',
@@ -37,8 +37,8 @@ class CarritoComprasController extends Controller
 	public function add_promocion(CarritoPromocionRequest $request)
 	{
 		$input = $request->all();
-		$promocion = Promocion::findOrFail($input['promocion_id']);
-		Cart::add(array('id' => $input['promocion_id'], 'name' => $promocion->nombre, 'qty' => $input['cantidad'], 'price' => $promocion->precio));
+		$promocion = Promocion::findOrFail($input['objeto_id']);
+		Cart::add(array('id' => $input['objeto_id'], 'name' => $promocion->nombre, 'qty' => $input['cantidad'], 'price' => $promocion->precio));
 
 		$response = array(
       'status' => 'success',

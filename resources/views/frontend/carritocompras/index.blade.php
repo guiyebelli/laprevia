@@ -11,9 +11,7 @@
 					<div class="row transparente_BG blanco">
 						<div class="col-xs-12">
 
-							<div class="page-header">
-							  <h1>Hello, world!</h1>
-							</div>
+						  <h1>Mi carrito</h1>
 
 							<table class="table">
 								<thead>

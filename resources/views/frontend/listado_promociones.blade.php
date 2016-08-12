@@ -1,39 +1,35 @@
 @extends('aplicacion/app')
 
 @section('content')
-<script src="{{ asset('js/sumar_carrito.js') }}"></script>
 <section>
 	<div class="container">
 		<div class="row">			
-			<div class="col-xs-10 col-xs-offset-1 bloque">
-				<div class="separar_bloque">
-					<div class="row transparente_BG blanco">
-					@foreach($promociones as $promocion)
-					<div class="caja_bloque">
-						<div class="col-xs-8">
-							<p><img src="{{$promocion->get_imagen()}}" class="img-responsive" alt="Imagen promocion"></p>
-						</div>
-						<div class="col-xs-4">
-							<strong>
-								<p><h3>{{$promocion}}</h3></p>
-								<p><h1 class="text-center">${{$promocion->precio}}</h1></p>
-								<p>Incluye:</p>	
-							</strong>
-							<p><small>{{$promocion->descripcion}}</small></p>
-							<div>
-								{!! Form::model($promocion, array('action' => ['CarritoComprasController@add_promocion'], 'method' => 'POST', 'class' => 'formCarrito')) !!}
-									
-									<div class="form-group">
-										{{ Form::hidden('promocion_id', $promocion->id, array('id' => 'promocion_id')) }}
-										{{ Form::hidden('cantidad', 1, array('id' => 'cantidad')) }}
-										{{ Form::button('&lt;', array('class'=>'btn btn-negro boton_restar', 'type'=>'button')) }} <span>1</span> {{ Form::button('>', array('class'=>'btn btn-negro boton_sumar', 'type'=>'button')) }}
-									</div>
+			<div class="col-xs-10 col-xs-offset-1 transparente_BG">
+				<div class="page-header">
+				  <h1 class="blanco">Nuestras Promociones</h1>
+				</div>
 
-									{{ Form::button('+<span class="glyphicon glyphicon-shopping-cart"></span>',	array('class'=>'btn btn-rojo','type'=>'submit')) }}
-								{!! Form::close() !!}
+				<div class="bloque">
+					@foreach($promociones as $promocion)
+						<div class="caja_bloque">
+							<!-- IMAGEN -->
+							<div class="col-md-9">
+								<img src="{{$promocion->get_imagen()}}" class="img-responsive" alt="Imagen promocion">
 							</div>
+							<!-- DETALLE PRODUCTO -->
+							<div class="col-md-3 recuadro">
+								<strong><h2 class="titulo_promo">{{$promocion}}</h2></strong>
+								<p><small>{{$promocion->descripcion}}</small></p>
+								<hr>
+								<div class="col-md-6 linea_der">
+									<h2><strong>${{$promocion->precio}}</strong></h2>
+								</div>
+								<div class="col-md-6">
+									@include('frontend.form_add_carrito', ['objeto' => $promocion, 'accion' => 'CarritoComprasController@add_promocion'])
+								</div>
+							</div>
+							<div class="clearfix"></div>
 						</div>
-					</div>
 					@endforeach
 				</div>
 				<div class="clearfix"></div>
