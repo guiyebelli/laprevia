@@ -19,7 +19,7 @@ class Categoria extends Model
 
     public function productos()
     {
-        return $this->hasMany('App\Models\Producto');
+        return $this->hasMany('App\Models\Producto')->orderBy('nombre');
     }
 
     public function delete()

@@ -21,7 +21,7 @@ class InicioController extends Controller
 
 	public function productos()
 	{
-		$data['productos'] = Producto::orderBy('nombre')->get();
+		$data['categorias'] = Categoria::all();
 		return view('frontend.listado_productos', $data);
 	}
 

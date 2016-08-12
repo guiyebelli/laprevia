@@ -120,3 +120,21 @@ section {
 .btn-negro {background-color: #000000; color: #ffffff}
 .btn-negro:hover {background-color: #67686B; color: #ffffff}
 .btn-negro:focus {background-color: #67686B; color: #ffffff }
+
+
+/*NAV PILLS*/
+.nav>li>a:hover, .nav>li>a:focus{
+  background-color: #AC2225;
+  color: #ffffff;
+}
+
+.nav-pills>li>a{
+  color: #ffffff;
+  background-color: #AC2225;
+  border-radius: 0px;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+  background-color: #EA1D25;
+  color: #ffffff;
+}
