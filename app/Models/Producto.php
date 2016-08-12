@@ -2,17 +2,24 @@
 
 namespace App\Models;
 
+use App\Models\Categoria;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Producto extends Model
 {
     protected $table = 'productos';
 
-    protected $fillable = ['nombre', 'precio', 'descripcion', 'imagen', 'estado', 'tipo'];
+    protected $fillable = ['nombre', 'precio', 'descripcion', 'imagen', 'estado', 'categoria_id'];
 
     public function __toString()
     {
         return sprintf("%s", $this->nombre);
+    }
+
+    public function categoria()
+    {
+        return $this->belongsTo('App\Models\Categoria');
     }
 
     public function delete()

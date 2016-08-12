@@ -8,13 +8,7 @@
 			</div>
 
 			<div>
-				{!! Form::model($producto, array('action' => $accion, 'method' => $metodo, 'enctype' => 'multipart/form-data')) !!}
-
-					<div class="form-group @if ($errors->first('categoria_id')){!! 'has-error' !!}@endif">
-						{!! Form::label('categoria_id', 'Categor&iacute;a', array('class' => 'control-label')) !!}
-						{!! Form::select('categoria_id', $categorias, null, array('class' => 'form-control', 'id' => 'categoria_id')) !!}
-						@if ($errors->first('categoria_id'))<span class="help-block">{{$errors->first('categoria_id')}}</span>@endif
-					</div>
+				{!! Form::model($categoria, array('action' => $accion, 'method' => $metodo, 'enctype' => 'multipart/form-data')) !!}
 
 					<div class="form-group @if ($errors->first('nombre')){!! 'has-error' !!}@endif">
 						{!! Form::label('nombre', 'Nombre', array('class' => 'control-label')) !!}
@@ -22,24 +16,12 @@
 						@if ($errors->first('nombre'))<span class="help-block">{{$errors->first('nombre')}}</span>@endif
 					</div>
 
-					<div class="form-group @if ($errors->first('precio')){!! 'has-error' !!}@endif">
-						{!! Form::label('precio', 'Precio', array('class' => 'control-label')) !!}
-						{!! Form::text('precio', null, array('class' => 'form-control')) !!}
-						@if ($errors->first('precio'))<span class="help-block">{{$errors->first('precio')}}</span>@endif
-					</div>
-
-					<div class="form-group @if ($errors->first('descripcion')){!! 'has-error' !!}@endif">
-						{!! Form::label('descripcion', 'Descripci&oacute;n', array('class' => 'control-label')) !!}
-						{!! Form::text('descripcion', null, array('class' => 'form-control')) !!}
-						@if ($errors->first('descripcion'))<span class="help-block">{{$errors->first('descripcion')}}</span>@endif
-					</div>
-
-					@if ($producto->imagen)
+					@if ($categoria->imagen)
 						<div class="form-group">
 							{!! Form::label('Imagen actual', 'Imagen actual', array('class' => 'control-label')) !!}
 							<div class="col-xs-12">
 								<div class="col-xs-3">
-									<img src="{{$producto->get_imagen()}}" class="img-thumbnail" alt="Imagen producto">
+									<img src="{{$categoria->get_imagen()}}" class="img-thumbnail" alt="Imagen categoria">
 								</div>
 							</div>
 						</div>

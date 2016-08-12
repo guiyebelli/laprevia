@@ -3,12 +3,18 @@
 @section('content')
 
 <section>
+	
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-10 col-xs-offset-1 bloque">
 				<div class="carrito">
 					<div class="row transparente_BG blanco">
 						<div class="col-xs-12">
+
+							<div class="page-header">
+							  <h1>Hello, world!</h1>
+							</div>
+
 							<table class="table">
 								<thead>
 									<tr>

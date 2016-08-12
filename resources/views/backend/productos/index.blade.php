@@ -16,7 +16,7 @@
 					<tr>
 						<th></th>
 						<th>Nombre</th>
-						<th>Tipo</th>
+						<th>Categor&iacute;a</th>
 						<th>Precio</th>
 						<th>Descripcion</th>
 						<th>Imagen</th>
@@ -37,9 +37,9 @@
 									</a>
 								</td>
 								<td>{{$producto->nombre}}</td>
-								<td>{{$tipos[$producto->tipo]}}</td>
+								<td>{{$producto->categoria}}</td>
 								<td>${{$producto->precio}}</td>
-								<td>${{$producto->descripcion}}</td>
+								<td>{{$producto->descripcion}}</td>
 								<td class="col-xs-1"> 
 									<img src="{{$producto->get_imagen()}}" class="img-thumbnail" alt="Imagen producto">
 								</td>

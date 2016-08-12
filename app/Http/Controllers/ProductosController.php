@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Producto;
 use Illuminate\Http\Request;
-use App\Http\Requests\ProductosRequest;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
+use App\Models\Producto;
+use App\Models\Categoria;
 
 use App\Http\Requests;
+use App\Http\Requests\ProductosRequest;
 use App\Http\Controllers\Controller;
 
 class ProductosController extends Controller
@@ -14,22 +17,32 @@ class ProductosController extends Controller
     public function index()
     {
         $data['productos'] = Producto::all();
-        $data['tipos'] = array_tipos_productos();
         return view('backend.productos.index', $data);
     }
 
     public function create()
     {
         $data['producto'] = new Producto;
+        $data['categorias'] = colleccion_listado(Categoria::orderBy('nombre')->get());
         return view('backend.productos.create', $data);
     }
 
     public function store(ProductosRequest $request)
     {
+        $input = $request->all();
+        try
+        {
+            $categoria = Categoria::findOrFail($input['categoria_id']);
+        }
+        catch(ModelNotFoundException $e)
+        {
+            \Session::flash('error', 'La categoria no existe en la base de datos.');
+            return redirect('administracion/productos');
+        }
+
         $imagen = \Request::file('imagen');
         $nombre_imagen = save_imagen_thumbnail($imagen, path_productos());
 
-        $input = $request->all();
         $input['imagen'] = $nombre_imagen;
         $input['estado'] = 1;
         $producto = Producto::create($input);
@@ -43,6 +56,7 @@ class ProductosController extends Controller
         try
         {
             $data['producto'] = Producto::findOrFail($id);
+            $data['categorias'] = colleccion_listado(Categoria::orderBy('nombre')->get());
             return view('backend.productos.edit', $data);
         } 
         catch (ModelNotFoundException $e)
@@ -58,6 +72,15 @@ class ProductosController extends Controller
         {
             $producto = Producto::findOrFail($id);
             $input = $request->all();
+            try
+            {
+                $categoria = Categoria::findOrFail($input['categoria_id']);
+            }
+            catch(ModelNotFoundException $e)
+            {
+                \Session::flash('error', 'La categoria no existe en la base de datos.');
+                return redirect('administracion/productos');
+            }
 
             $imagen = \Request::file('imagen');
             if ($imagen) 

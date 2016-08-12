@@ -6,10 +6,10 @@
 	<div class="container">
 		<div class="row">			
 			<div class="col-xs-10 col-xs-offset-1 bloque">
-				<div class="promociones">
+				<div class="separar_bloque">
 					<div class="row transparente_BG blanco">
 					@foreach($promociones as $promocion)
-					<div class="caja_producto">
+					<div class="caja_bloque">
 						<div class="col-xs-8">
 							<p><img src="{{$promocion->get_imagen()}}" class="img-responsive" alt="Imagen promocion"></p>
 						</div>

@@ -2,7 +2,7 @@
 
 use App\Http\Requests\Request;
 
-class ProductosRequest extends Request 
+class CategoriasRequest extends Request 
 {
 	public function authorize()
 	{
@@ -13,9 +13,6 @@ class ProductosRequest extends Request
 	{
 		$rules = array(
 			'nombre' => 'required',
-			'precio' => 'required',
-			'descripcion' => 'required',
-			'categoria_id' => 'required',
 		);
 
 		if ( $this->method() == 'POST') 

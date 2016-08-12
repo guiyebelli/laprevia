@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-xs-10 col-xs-offset-1 transparente_BG blanco">
 				<div class="page-header">
-				  <h1>Nuestros Productos</h1>
+				  <h1>Productos {{$categoria}}</h1>
 				</div>
 				<div class="bloque">
 					@if(count($productos) > 0)

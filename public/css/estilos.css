@@ -81,16 +81,12 @@ section {
   margin-top: 30px
 }
 
-/*LISTA DE PRODUCTOS FORNT*/
-.productos{
+/*LISTA FORNT*/
+.separar_bloque{
   margin-top: 30px
 }
 
-.promociones{
-  margin-top: 30px
-}
-
-.caja_producto
+.caja_bloque
 {
   margin-top: 30px;
   margin-bottom: 30px;
