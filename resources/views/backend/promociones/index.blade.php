@@ -15,11 +15,11 @@
 				<thead>
 					<tr>
 						<th></th>
+						<th class="text-center">Stock</th>
 						<th>Inicio</th>
 						<th>Nombre</th>
-						<th>Precio</th>
-						<th>Precio Original</th>
 						<th>Descipcion</th>
+						<th>Precio</th>
 						<th>Imagen</th>
 						<th class="text-right">Acciones</th>
 					</tr>
@@ -37,11 +37,11 @@
 									@endif
 									</a>
 								</td>
+								<td class="text-center">{{$promocion->stock}}</td>
 								<td class="text-center">{{($promocion->visible == 0) ? 'Si' : 'No'}}</td>
 								<td>{{$promocion->nombre}}</td>
-								<td>${{$promocion->precio}}</td>
-								<td>${{$promocion->precio_original}}</td>
 								<td>{{$promocion->descripcion}}</td>
+								<td><strong class="tachado">${{$promocion->precio_original}}</strong> <h4>${{$promocion->precio}}</h4> </td>
 								<td class="col-xs-1"> 
 									<img src="{{$promocion->get_imagen()}}" class="img-thumbnail" alt="Imagen promocion">
 								</td>

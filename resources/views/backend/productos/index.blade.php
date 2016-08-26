@@ -15,10 +15,11 @@
 				<thead>
 					<tr>
 						<th></th>
-						<th>Nombre</th>
+						<th class="text-center">Stock</th>
 						<th>Categor&iacute;a</th>
+						<th>Nombre</th>
+						<th>Descripci&oacute;n</th>
 						<th>Precio</th>
-						<th>Descripcion</th>
 						<th>Imagen</th>
 						<th class="text-right">Acciones</th>
 					</tr>
@@ -36,10 +37,11 @@
 									@endif
 									</a>
 								</td>
-								<td>{{$producto->nombre}}</td>
+								<td class="text-center">{{$producto->stock}}</td>
 								<td>{{$producto->categoria}}</td>
-								<td>${{$producto->precio}}</td>
+								<td>{{$producto->nombre}}</td>
 								<td>{{$producto->descripcion}}</td>
+								<td>${{$producto->precio}}</td>
 								<td class="col-xs-1"> 
 									<img src="{{$producto->get_imagen()}}" class="img-thumbnail" alt="Imagen producto">
 								</td>

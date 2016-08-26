@@ -85,7 +85,7 @@ class ProductosController extends Controller
             $imagen = \Request::file('imagen');
             if ($imagen) 
             {
-                \File::delete($producto->get_imagen());
+                \File::delete($producto->get_path_imagen());
                 $nombre_imagen = save_imagen_thumbnail($imagen, path_productos());
                 $input['imagen'] = $nombre_imagen;
             }

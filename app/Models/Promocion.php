@@ -8,7 +8,7 @@ class Promocion extends Model
 {
     protected $table = 'promociones';
 
-    protected $fillable = ['nombre', 'precio', 'precio_original', 'descripcion', 'imagen', 'estado', 'visible'];
+    protected $fillable = ['nombre', 'precio', 'precio_original', 'descripcion', 'imagen', 'estado', 'visible', 'stock'];
 
     public function __toString()
     {

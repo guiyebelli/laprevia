@@ -22,16 +22,25 @@
 						@if ($errors->first('nombre'))<span class="help-block">{{$errors->first('nombre')}}</span>@endif
 					</div>
 
-					<div class="form-group @if ($errors->first('precio')){!! 'has-error' !!}@endif">
-						{!! Form::label('precio', 'Precio', array('class' => 'control-label')) !!}
-						{!! Form::text('precio', null, array('class' => 'form-control')) !!}
-						@if ($errors->first('precio'))<span class="help-block">{{$errors->first('precio')}}</span>@endif
-					</div>
-
 					<div class="form-group @if ($errors->first('descripcion')){!! 'has-error' !!}@endif">
 						{!! Form::label('descripcion', 'Descripci&oacute;n', array('class' => 'control-label')) !!}
 						{!! Form::text('descripcion', null, array('class' => 'form-control')) !!}
 						@if ($errors->first('descripcion'))<span class="help-block">{{$errors->first('descripcion')}}</span>@endif
+					</div>
+
+					<div class="form-group @if ($errors->first('precio')){!! 'has-error' !!}@endif">
+						{!! Form::label('precio', 'Precio', array('class' => 'control-label')) !!}
+						<div class="input-group">
+      				<div class="input-group-addon">$</div>
+							{!! Form::text('precio', null, array('class' => 'form-control')) !!}
+						</div>
+						@if ($errors->first('precio'))<span class="help-block">{{$errors->first('precio')}}</span>@endif
+					</div>
+
+					<div class="form-group @if ($errors->first('stock')){!! 'has-error' !!}@endif">
+						{!! Form::label('stock', 'Stock', array('class' => 'control-label')) !!}
+						{!! Form::text('stock', null, array('class' => 'form-control')) !!}
+						@if ($errors->first('stock'))<span class="help-block">{{$errors->first('stock')}}</span>@endif
 					</div>
 
 					@if ($producto->imagen)

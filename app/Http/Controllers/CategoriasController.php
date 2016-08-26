@@ -59,7 +59,7 @@ class CategoriasController extends Controller
             $imagen = \Request::file('imagen');
             if ($imagen) 
             {
-                \File::delete($categoria->get_imagen());
+                \File::delete($categoria->get_path_imagen());
                 $nombre_imagen = save_file($imagen, path_categorias());;
                 $input['imagen'] = $nombre_imagen;
             }

@@ -150,3 +150,5 @@ section {
 .linea_der {
   border-right: 1px solid #eee;
 }
+
+.tachado{text-decoration:line-through;}

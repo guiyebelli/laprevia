@@ -16,6 +16,7 @@ class PromocionesRequest extends Request
 			'precio' => 'required',
 			'precio_original' => 'required',
 			'descripcion' => 'required',
+			'stock' => 'required',
 		);
 
 		if ( $this->method() == 'POST') 

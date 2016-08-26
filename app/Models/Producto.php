@@ -10,7 +10,7 @@ class Producto extends Model
 {
     protected $table = 'productos';
 
-    protected $fillable = ['nombre', 'precio', 'descripcion', 'imagen', 'estado', 'categoria_id'];
+    protected $fillable = ['nombre', 'precio', 'descripcion', 'imagen', 'estado', 'stock','categoria_id'];
 
     public function __toString()
     {

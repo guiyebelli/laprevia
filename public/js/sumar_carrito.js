@@ -29,9 +29,16 @@ $(function(){
       data:$(this).serialize(),
       dataType: 'json',
       success: function(data)
-      {      
-        $('#cantidad_carrito').html(data['cant_carrito']);
-        Notify(data['msj'], null, null, 'success');
+      {
+      	if (data['status'] == 'success')
+      	{
+	        $('#cantidad_carrito').html(data['cant_carrito']);
+	        Notify(data['msj'], null, null, 'success');
+      	}
+      	else
+      	{
+        	Notify(data['msj'], null, null, 'danger');
+      	}
       },
     })
   });
