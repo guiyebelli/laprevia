@@ -9,6 +9,8 @@ $(function () {
 	// MODAL VIEW
 	$(document).on("click",'[class*="modal-view"]', function(e){
 		e.preventDefault();
+
+		$('[data-toggle="tooltip"]').tooltip('hide');
 		modal = $("#genericDialog");
 		$.get( $(this).attr('href'), function( data ) {
 		  if((data.title != undefined)&&(data.html != undefined)){

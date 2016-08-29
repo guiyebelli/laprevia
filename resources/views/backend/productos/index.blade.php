@@ -38,9 +38,7 @@
 									</a>
 								</td>
 								<td class="text-center">
-									<a class="modal-view" href="{{ action('ProductosController@editar_stock', [$producto->id]) }}">
-										{{$producto->stock}}
-									</a>
+									<a class="modal-view" href="{{ action('ProductosController@editar_stock', [$producto->id]) }}" data-toggle="tooltip" data-placement="top" data-title="Cambiar stock">{{$producto->stock}}</a>
 								</td>
 								<td>{{$producto->categoria}}</td>
 								<td>{{$producto->nombre}}</td>
