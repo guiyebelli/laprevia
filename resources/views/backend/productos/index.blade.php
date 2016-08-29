@@ -37,7 +37,11 @@
 									@endif
 									</a>
 								</td>
-								<td class="text-center">{{$producto->stock}}</td>
+								<td class="text-center">
+									<a class="modal-view" href="{{ action('ProductosController@editar_stock', [$producto->id]) }}">
+										{{$producto->stock}}
+									</a>
+								</td>
 								<td>{{$producto->categoria}}</td>
 								<td>{{$producto->nombre}}</td>
 								<td>{{$producto->descripcion}}</td>
