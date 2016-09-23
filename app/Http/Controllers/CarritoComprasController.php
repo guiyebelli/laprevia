@@ -11,6 +11,7 @@ use App\Models\Contenido;
 
 use App\Http\Requests\CarritoProductoRequest;
 use App\Http\Requests\CarritoPromocionRequest;
+use App\Http\Requests\CarritoPedidoRequest;
 
 class CarritoComprasController extends Controller 
 {
@@ -193,8 +194,32 @@ class CarritoComprasController extends Controller
     return view('frontend.carritocompras.form', $data);
 	}
 	
-	public function make_order()
+	public function make_order(CarritoPedidoRequest $request)
 	{
+		$input = $request->all();
+		$carrito = Cart::content();
+		$total = Cart::total();
+		$input['estado'] = 0;
+		$input['total'] = $total;
+		$pedido = Pedido::create($input);
 
+		\Mail::send('emails.carrito.pedido_generado', ['carrito' => $carrito, 'pedido' => $pedido], function($message) use($pedido)
+			{
+				$message->from('no-reply@gmail.com', 'La Previa Delivery');
+		    $message->to($pedido->email, $pedido)->subject('Pedido generado');
+			}
+		);
+
+		\Mail::send('emails.carrito.nuevo_pedido', ['carrito' => $carrito, 'pedido' => $pedido], function($message) use($pedido)
+			{
+				$message->from('no-reply@gmail.com', 'La Previa Delivery');
+		    $message->to('lapreviacdia@gmail.com', $pedido)->subject('NUEVO Penerado');
+			}
+		);
+
+		Cart::destroy();
+
+    \Session::flash('noticia', 'Pedido generado con &eacute;xito. Muchas gracias '.$pedido->comprador.', se le enviar&aacute; un email con los detalles del mismo.');
+    return redirect('');
 	}
 }

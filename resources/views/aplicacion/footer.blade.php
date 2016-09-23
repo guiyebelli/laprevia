@@ -6,6 +6,6 @@
 			<a href="https://twitter.com/lapreviacdia" target="_blanck"><img src="{{url('images/pagina/twitter.png')}}"></a>
 		</p>
 		<p class="text-center">Concordia - Entre Ríos</p>
-		<p class="text-center">Pedidos al (0345) 154134437</p>
+		<p class="text-center">Pedidos al (0345) 154134437 | lapreviacdia@gmail.com</p>
 	</div>
 </footer>
