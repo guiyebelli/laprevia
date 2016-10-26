@@ -55,7 +55,7 @@
 						@endforeach
 					@else
 						<tr class="text-center">
-							<td colspan="7">NO EXISTEN PRODUCTOS EN EL SISTEMA</td>
+							<td colspan="8">NO EXISTEN PRODUCTOS EN EL SISTEMA</td>
 						</tr>
 					@endif
 				</tbody>
